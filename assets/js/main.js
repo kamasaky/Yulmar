@@ -168,3 +168,83 @@
       clickable: true
     }
   });
+
+   const constraints = {
+       name: {
+           presence: { allowEmpty: false }
+       },
+       email: {
+           presence: { allowEmpty: false },
+           email: true
+       },
+       message: {
+           presence: { allowEmpty: false }
+       }
+   };
+
+   const form = document.getElementById('contact-form');
+
+   form.addEventListener('submit', function (event) {
+     const formValues = {
+         name: form.elements.name.value,
+         email: form.elements.email.value,
+         message: form.elements.message.value
+     };
+
+     const errors = validate(formValues, constraints);
+
+     if (errors) {
+       event.preventDefault();
+       const errorMessage = Object
+           .values(errors)
+           .map(function (fieldValues) { return fieldValues.join(', ')})
+           .join("\n");
+
+       alert(errorMessage);
+     }
+   }, false);
+
+   console.log('it works!!')
+
+   $(document).ready(function() {
+   $('.submit').click(function(event){
+     console.log('Clicked button!!!!!!!!')
+   
+     var email = $('.email').val()
+     var name = $('.name').val()
+     var subject = $('.subject').val()
+     var message = $('.message').val()
+     var statusElm = $('.status')
+     statusElm.empty()
+   
+     if(email.length > 5 && email.includes('@') && email.includes('.')) {
+       statusElm.append('<div>email is valid!!!!!</div>')
+     } else {
+       event.preventDefault()
+       statusElm.append('<div>email is not valid!!!!!!</div>')
+     }
+     
+     if(subject.length>2){
+       statusElm.append('<div>Subject is valid!!!</div>')
+     } else {
+       event.preventDefault()
+       statusElm.append('<div>Subject is not valid!!!</div>')
+     }
+
+     if(name.length>2){
+      statusElm.append('<div>Name is valid!!!</div>')
+    } else {
+      event.preventDefault()
+      statusElm.append('<div>Nameis not valid!!!</div>')
+    }
+      
+     if(message.length >20) {
+       statusElm.append('<div>Message is valid!!!</div>')
+     } else {
+       event.preventDefault()
+       statusElm.append('<div>Message is not valid!!!!!</div>')
+     }
+   
+   })
+   })
+
