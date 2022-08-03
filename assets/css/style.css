@@ -1,3 +1,4 @@
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -793,6 +794,10 @@ section {
   font-weight: 600;
 }
 
+
+
+
+
 .contact .php-email-form .loading {
   display: none;
   background: var(--color-white);
@@ -918,12 +923,12 @@ section {
   color: #fff;
   border-radius: 30px;
   padding: 50px 40px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto';
   font-weight: 500;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
+  position: sticky;
   display: inline-block;
    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
    7px 7px 20px 0px rgba(0,0,0,.1),
@@ -933,8 +938,8 @@ section {
 
 
 .btn-5 {
-  position: relative;
-  left: 350px;
+  position: sticky;
+  left: 35px;
   width: 130px;
   height: 40px;
   line-height: 42px;
@@ -1363,4 +1368,21 @@ background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgb(255, 0, 0) 100%);
   font-size: 24px;
 
 }
+
+.form-control::-webkit-input-placeholder {
+  font-family: 'Roboto Mono';
+}
+
+.form-control:-ms-input-placeholder {
+  font-family: 'Roboto Mono';
+}
+
+.form-control:-moz-placeholder {
+  font-family: 'Roboto Mono';
+}
+
+.form-control::-moz-placeholder {
+  font-family: 'Roboto Mono';
+}
+
 
